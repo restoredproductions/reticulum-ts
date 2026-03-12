@@ -10,8 +10,7 @@
 import { Logger, LogLevel } from './log/Logger';
 import { Link } from './Link';
 import { Packet, CONTEXT_CHANNEL } from './Packet';
-import { encode as msgpackEncode, decode as msgpackDecode } from '@msgpack/msgpack';
-import { concatBytes, toHex, shortHex, readUint16BE, writeUint16BE } from './utils/bytes';
+import { concatBytes, shortHex, readUint16BE, writeUint16BE } from './utils/bytes';
 
 const TAG = 'Channel';
 

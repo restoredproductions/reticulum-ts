@@ -10,8 +10,8 @@
  * Wire-compatible with Python RNS TCPInterface.
  */
 
-import { InterfaceBase, InterfaceConfig, HDLC_FLAG, MODE_FULL } from './Interface';
-import { Logger, LogLevel } from '../log/Logger';
+import { InterfaceBase, InterfaceConfig, MODE_FULL } from './Interface';
+import { Logger } from '../log/Logger';
 
 const TAG = 'TCPInterface';
 

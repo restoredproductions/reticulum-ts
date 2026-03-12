@@ -17,7 +17,6 @@ import { Logger, LogLevel } from './log/Logger';
 import { Transport } from './Transport';
 import { Identity } from './Identity';
 import { initRandom } from './crypto/Random';
-import { toHex } from './utils/bytes';
 import { InterfaceBase } from './interfaces/Interface';
 
 const TAG = 'Reticulum';

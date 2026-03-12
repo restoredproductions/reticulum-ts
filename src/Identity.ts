@@ -17,20 +17,15 @@ import {
   X25519_KEY_LENGTH,
   Ed25519PrivateKey,
   Ed25519PublicKey,
-  ED25519_SEED_LENGTH,
   ED25519_SIG_LENGTH,
-  sha256,
   truncatedHash,
   fullHash,
-  nameHash,
   deriveKey,
   Token,
   TOKEN_OVERHEAD,
-  KEYSIZE,
   IDENTITY_KEY_LENGTH,
   randomBytes,
   HASHLENGTH,
-  TRUNCATED_HASHLENGTH,
   NAME_HASH_LENGTH,
 } from './crypto';
 import { concatBytes, toHex, shortHex, constantTimeEqual } from './utils/bytes';
@@ -43,12 +38,10 @@ export const ANNOUNCE_SIGNATURE_SIZE = ED25519_SIG_LENGTH; // 64 bytes
 
 /** Ratchet management constants */
 const RATCHET_COUNT = 512;
-const RATCHET_EXPIRY_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
 const RATCHET_ROTATION_MS = 30 * 60 * 1000; // 30 minutes
 
 /** Known destination storage (in-memory, persisted via Storage module) */
 const knownDestinations: Map<string, Uint8Array> = new Map(); // hash_hex → public_key (64B)
-const knownRatchets: Map<string, Uint8Array[]> = new Map(); // hash_hex → ratchet keys
 
 export class Identity {
   // Key pairs

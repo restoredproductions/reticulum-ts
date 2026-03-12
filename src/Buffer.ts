@@ -7,9 +7,8 @@
  * Wire-compatible with Python RNS Buffer.
  */
 
-import { Logger, LogLevel } from './log/Logger';
+import { Logger } from './log/Logger';
 import { Channel, StreamDataMessage, SMT_STREAM_DATA } from './Channel';
-import { shortHex } from './utils/bytes';
 
 const TAG = 'Buffer';
 

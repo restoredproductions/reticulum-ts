@@ -10,7 +10,7 @@
  * Default port: 37428 (matching Python RNS)
  */
 
-import { TCPInterface, TCPInterfaceConfig } from './TCPInterface';
+import { TCPInterface } from './TCPInterface';
 import { Logger } from '../log/Logger';
 import { MODE_FULL } from './Interface';
 

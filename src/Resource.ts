@@ -10,14 +10,12 @@
 import { Logger, LogLevel } from './log/Logger';
 import { Link } from './Link';
 import {
-  Packet,
   CONTEXT_RESOURCE,
   CONTEXT_RESOURCE_ADV,
   CONTEXT_RESOURCE_REQ,
   CONTEXT_RESOURCE_HMU,
   CONTEXT_RESOURCE_PRF,
   CONTEXT_RESOURCE_ICL,
-  CONTEXT_RESOURCE_RCL,
 } from './Packet';
 import { fullHash, truncatedHash, randomBytes, HASHLENGTH } from './crypto';
 import { concatBytes, toHex, shortHex, writeUint32BE, readUint32BE } from './utils/bytes';

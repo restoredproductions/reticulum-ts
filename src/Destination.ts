@@ -17,18 +17,14 @@ import { Identity } from './Identity';
 import {
   truncatedHash,
   nameHash,
-  fullHash,
-  TRUNCATED_HASHLENGTH,
-  NAME_HASH_LENGTH,
   Token,
   randomBytes,
   HASHLENGTH,
 } from './crypto';
 import { concatBytes, toHex, shortHex, fromUtf8 } from './utils/bytes';
-import { Logger, LogLevel } from './log/Logger';
+import { Logger } from './log/Logger';
 import {
   Packet,
-  PACKET_DATA,
   PACKET_ANNOUNCE,
   PROPAGATION_BROADCAST,
   DESTINATION_SINGLE,

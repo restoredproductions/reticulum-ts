@@ -7,8 +7,7 @@
 import { cbc } from '@noble/ciphers/aes';
 import { pad, unpad } from './PKCS7';
 import { randomBytes } from './Random';
-import { Logger } from '../log/Logger';
-import { LogLevel } from '../log/Logger';
+import { Logger, LogLevel } from '../log/Logger';
 
 const TAG = 'Crypto.AES';
 const IV_LENGTH = 16; // 128-bit IV for CBC mode

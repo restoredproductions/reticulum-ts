@@ -20,12 +20,10 @@ import {
   fullHash,
   truncatedHash,
   TRUNCATED_HASHLENGTH,
-  HASHLENGTH,
   TOKEN_OVERHEAD,
-  ED25519_SIG_LENGTH,
   X25519_KEY_LENGTH,
 } from './crypto';
-import { concatBytes, toHex, shortHex } from './utils/bytes';
+import { concatBytes, shortHex } from './utils/bytes';
 
 const TAG = 'Packet';
 

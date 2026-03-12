@@ -18,17 +18,11 @@ import {
   X25519PrivateKey,
   X25519PublicKey,
   X25519_KEY_LENGTH,
-  Ed25519PrivateKey,
-  Ed25519PublicKey,
   ED25519_SIG_LENGTH,
   Token,
   TOKEN_OVERHEAD,
   deriveKey,
-  randomBytes,
   truncatedHash,
-  fullHash,
-  HASHLENGTH,
-  TRUNCATED_HASHLENGTH,
 } from './crypto';
 import {
   Packet,
@@ -37,8 +31,6 @@ import {
   PACKET_DATA,
   PACKET_LINKREQUEST,
   PACKET_PROOF,
-  HEADER_1,
-  HEADER_2,
   PROPAGATION_BROADCAST,
   DESTINATION_LINK,
   DESTINATION_SINGLE,
@@ -49,13 +41,11 @@ import {
   CONTEXT_LINKPROOF,
   CONTEXT_LRRTT,
   CONTEXT_CHANNEL,
-  CONTEXT_REQUEST,
-  CONTEXT_RESPONSE,
 } from './Packet';
-import { Destination, DEST_SINGLE, IN, OUT } from './Destination';
+import { Destination } from './Destination';
 import { Identity } from './Identity';
 import { Transport } from './Transport';
-import { concatBytes, toHex, shortHex, constantTimeEqual } from './utils/bytes';
+import { concatBytes, shortHex } from './utils/bytes';
 
 const TAG = 'Link';
 

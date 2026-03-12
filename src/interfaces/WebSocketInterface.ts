@@ -16,7 +16,7 @@
  */
 
 import { InterfaceBase, InterfaceConfig, MODE_FULL } from './Interface';
-import { Logger, LogLevel } from '../log/Logger';
+import { Logger } from '../log/Logger';
 
 const TAG = 'WebSocketInterface';
 
@@ -100,13 +100,12 @@ export class WebSocketInterface extends InterfaceBase {
     }
 
     try {
-      // Send as binary frame (ArrayBuffer)
-      this._ws.send(data.buffer.slice(
-        data.byteOffset,
-        data.byteOffset + data.byteLength
-      ));
+      // Cast to any for React Native WebSocket compat (RN accepts
+      // Uint8Array directly; browser DOM typing is more restrictive)
+      const ws = this._ws as any;
+      ws.send(data);
     } catch (e) {
-      Logger.error(`WebSocket send error: ${e}`, TAG);
+      Logger.error('WebSocket send error: ' + String(e), TAG);
     }
   }
 
@@ -229,7 +228,8 @@ export class WebSocketInterface extends InterfaceBase {
     // a zero-length binary frame as an application-level keepalive
     if (this._ws && this._ws.readyState === WebSocket.OPEN) {
       try {
-        this._ws.send(new ArrayBuffer(0));
+        const ws = this._ws as any;
+        ws.send(new Uint8Array(0));
       } catch {
         // Ignore ping errors
       }

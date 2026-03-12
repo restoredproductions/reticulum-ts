@@ -15,7 +15,7 @@ import { Logger, LogLevel } from '../log/Logger';
 import { Transport } from '../Transport';
 import { hmacSha256 } from '../crypto/HMAC';
 import { truncatedHash } from '../crypto/Hashes';
-import { fromUtf8, toHex, shortHex, concatBytes } from '../utils/bytes';
+import { fromUtf8, concatBytes } from '../utils/bytes';
 
 const TAG = 'Interface';
 
